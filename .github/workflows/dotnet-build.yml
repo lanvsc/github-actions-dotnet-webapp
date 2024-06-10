@@ -1,0 +1,21 @@
+name: GH4W-Atividade-Modulo4-P1
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Executar um script personalizado
+      run: |
+        echo "Este é um script personalizado."
+        echo "Ele será executado em cada push para o repositório e a cada hora."
